@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Tvl.VisualStudio.Text.EditorNavigation.Interfaces</id>
+    <version>0.0.0</version>
+    <authors>Sam Harwell</authors>
+    <licenseUrl>https://raw.github.com/tunnelvisionlabs/vsbase/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+      This package provides the immutable interfaces for MEF-support for the Type and Member Drop Down Bars in the Visual Studio 2010+ text editor.
+    </description>
+    <summary>MEF-support for Type and Member Drop Down Bars in Visual Studio 2010+</summary>
+    <tags>vs2010 vs2012 vs2013</tags>
+    <dependencies>
+      <!-- Visual Studio 2010 -->
+      <dependency id="VSSDK.IDE.10" version="[10.0.3,11.0.0)"/>
+      <!--
+      Exposed Dependencies (Tvl.VisualStudio.Text.EditorNavigation.Interfaces.dll):
+      -->
+      <dependency id="VSSDK.Text" version="[10.0.3,)"/>
+    </dependencies>
+    <references>
+      <reference file="Tvl.VisualStudio.Text.EditorNavigation.Interfaces.dll"/>
+    </references>
+  </metadata>
+  <files>
+    <!-- Tools -->
+    <file src="install.ps1" target="tools"/>
+
+    <!-- Assemblies -->
+    <file src="bin\vs2010\$Configuration$\Tvl.VisualStudio.Text.EditorNavigation.Interfaces.dll" target="lib\net40"/>
+    <file src="bin\vs2010\$Configuration$\Tvl.VisualStudio.Text.EditorNavigation.Interfaces.pdb" target="lib\net40"/>
+    <file src="bin\vs2010\$Configuration$\Tvl.VisualStudio.Text.EditorNavigation.Interfaces.xml" target="lib\net40"/>
+
+    <!-- Code Contracts Assemblies -->
+    <file src="bin\vs2010\$Configuration$\CodeContracts\Tvl.VisualStudio.Text.EditorNavigation.Interfaces.Contracts.dll" target="lib\net40"/>
+    <file src="bin\vs2010\$Configuration$\CodeContracts\Tvl.VisualStudio.Text.EditorNavigation.Interfaces.Contracts.pdb" target="lib\net40"/>
+
+    <!-- Source Code -->
+    <file src="**\*.cs" exclude="obj\**\*.cs" target="src"/>
+  </files>
+</package>
