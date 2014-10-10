@@ -177,7 +177,8 @@
         [HostType("VS IDE")]
         public void TestGetComponentSelectorDialog2()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetComponentSelectorDialog2(), typeof(IVsComponentSelectorDlg2));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => (IVsComponentSelectorDlg2)sp.GetComponentSelectorDialog2() != null), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -198,14 +199,16 @@
         [HostType("VS IDE")]
         public void TestGetDebuggableProtocol()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetDebuggableProtocol(), typeof(IVsDebuggableProtocol));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetDebuggableProtocol() is IVsDebuggableProtocol), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
         [HostType("VS IDE")]
         public void TestGetDebugLaunch()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetDebugLaunch(), typeof(IVsDebugLaunch));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => (IVsDebugLaunch)sp.GetDebugLaunch() != null), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -331,7 +334,8 @@
         [HostType("VS IDE")]
         public void TestGetHelpSystem()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetHelpSystem(), typeof(IVsHelpSystem));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => (IVsHelpSystem)sp.GetHelpSystem() != null), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -345,7 +349,8 @@
         [HostType("VS IDE")]
         public void TestGetIme()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetIme(), typeof(IVsIME));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => (IVsIME)sp.GetIme() != null), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -387,7 +392,8 @@
         [HostType("VS IDE")]
         public void TestGetLaunchPad()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetLaunchPad(), typeof(IVsLaunchPad));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => (IVsLaunchPad)sp.GetLaunchPad() != null), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -422,7 +428,8 @@
         [HostType("VS IDE")]
         public void TestGetMenuEditor()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetMenuEditor(), typeof(IVsMenuEditor));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => (IVsMenuEditor)sp.GetMenuEditor() != null), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -457,14 +464,16 @@
         [HostType("VS IDE")]
         public void TestGetObjectSearch()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetObjectSearch(), typeof(IVsObjectSearch));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetObjectSearch() is IVsObjectSearch), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
         [HostType("VS IDE")]
         public void TestGetObjectSearchPane()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetObjectSearchPane(), typeof(IVsObjectSearchPane));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetObjectSearchPane() is IVsObjectSearchPane), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -562,7 +571,8 @@
         [HostType("VS IDE")]
         public void TestGetRegisterPriorityCommandTarget()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetRegisterPriorityCommandTarget(), typeof(IVsRegisterPriorityCommandTarget));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetRegisterPriorityCommandTarget() is IVsRegisterPriorityCommandTarget), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -590,7 +600,8 @@
         [HostType("VS IDE")]
         public void TestGetResourceView()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetResourceView(), typeof(IVsResourceView));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetResourceView() is IVsResourceView), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -724,7 +735,8 @@
         [HostType("VS IDE")]
         public void TestGetTargetFrameworkAssemblies()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetTargetFrameworkAssemblies(), typeof(IVsTargetFrameworkAssemblies));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetTargetFrameworkAssemblies() is IVsTargetFrameworkAssemblies), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -752,7 +764,8 @@
         [HostType("VS IDE")]
         public void TestGetTextOut()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetTextOut(), typeof(IVsTextOut));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetTextOut() is IVsTextOut), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -843,7 +856,8 @@
         [HostType("VS IDE")]
         public void TestGetUIShellDocumentWindowManager()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetUIShellDocumentWindowManager(), typeof(IVsUIShellDocumentWindowMgr));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetUIShellDocumentWindowManager() is IVsUIShellDocumentWindowMgr), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -871,7 +885,8 @@
         [HostType("VS IDE")]
         public void TestGetWebBrowsingService()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetWebBrowsingService(), typeof(IVsWebBrowsingService));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetWebBrowsingService() is IVsWebBrowsingService), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -885,7 +900,8 @@
         [HostType("VS IDE")]
         public void TestGetWebPreview()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetWebPreview(), typeof(IVsWebPreview));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetWebPreview() is IVsWebPreview), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
 
         [TestMethod]
@@ -899,7 +915,8 @@
         [HostType("VS IDE")]
         public void TestGetWebUrlMru()
         {
-            Assert.IsInstanceOfType(ServiceProvider.GetWebUrlMru(), typeof(IVsWebURLMRU));
+            object success = UIThreadInvoker.Invoke((Func<SVsServiceProvider, bool>)(sp => sp.GetWebUrlMru() is IVsWebURLMRU), ServiceProvider);
+            Assert.IsTrue((bool)success);
         }
     }
 }
